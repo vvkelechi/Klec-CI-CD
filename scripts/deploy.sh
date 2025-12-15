@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "Starting deployment..."
+BUCKET_NAME="klecc-devs"
 
-# Sync files to S3 bucket
-aws s3 sync . s3://klecc-devs --delete
+aws s3 sync app/ s3://$BUCKET_NAME --delete
 
-echo "Deployment completed successfully!"
+echo "Deployment completed successfully"
+
