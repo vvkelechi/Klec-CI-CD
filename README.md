@@ -32,39 +32,35 @@ Build and validation steps run
 
 Files are deployed to an S3 bucket
 
-🚀 CI/CD Pipeline with GitHub Actions & AWS S3
-📌 Overview
+🔐 Security Best Practices
 
-This project demonstrates a complete CI/CD pipeline built using GitHub Actions to automatically deploy application code to AWS S3.
-The pipeline triggers on code changes, builds the application, and securely deploys updates without manual intervention.
+AWS credentials stored using GitHub Secrets
 
-This setup reflects real-world DevOps practices used for automation, consistency, and reliability.
+IAM user follows least privilege principle
 
-🧰 Tech Stack
+S3 public access settings properly configured
 
-CI/CD: GitHub Actions
+No secrets committed to source control
 
-Cloud Provider: AWS
+▶️ GitHub Actions Workflow Trigger
 
-Storage & Hosting: Amazon S3
+The pipeline runs automatically when:
 
-IAM & Security: AWS IAM, GitHub Secrets
+Code is pushed to the main branch
 
-OS & Tools: Linux, Git, AWS CLI, YAML
+on:
+  push:
+    branches:
+      - main
 
-⚙️ CI/CD Workflow Architecture
+🚀 Deployment Outcome
 
-Developer pushes code to GitHub
+Static application files are uploaded to Amazon S3
 
-GitHub Actions workflow triggers automatically
+Changes are reflected immediately after a successful pipeline run
 
-Runner checks out the repository
+No manual deployment required
 
-AWS credentials are securely injected via GitHub Secrets
-
-Build and validation steps run
-
-Files are deployed to an S3 bucket
 
 🧠 Key Learnings
 
